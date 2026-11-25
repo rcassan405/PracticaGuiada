@@ -1,0 +1,52 @@
+package com.mycompany.practicaspring.business.entities;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="products") 
+public class Product {
+
+    @Id
+    @Column(name = "id")
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
+    private String description;
+    private Double price;
+    
+    public Integer getId()
+    {
+        return id;
+    }
+
+    public void setId(Integer id)
+    {
+        this.id = id;
+    } 
+
+    public String getDescription() {
+        return description;
+    }
+    
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
+    public Double getPrice() {
+        return price;
+    }
+    
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+    
+    public String toString() {
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("Description: " + description + ";");
+        buffer.append("Price: " + price);
+        return buffer.toString();
+    }
+}
